@@ -21,7 +21,13 @@ const nlCodes = {
     'QSP?': 'zult u doorsturen naar ...?',
     'QSQ?': 'moet ik een bericht voor u versturen?',
     'QSY?': 'moet ik naar frequentie ... veranderen?',
-    'QTH?': 'wat is uw locatie?'
+    'QTH?': 'wat is uw locatie?',
+    'reset-stats': 'Reset Statistieken',
+    'quiz': 'Quiz',
+    'stats': 'Statistieken',
+    'code': 'Code',
+    'percentage': 'Percentage',
+    'correct-total': 'Correct / Totaal',
 }
 
 export default nlCodes;

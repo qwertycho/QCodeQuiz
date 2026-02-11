@@ -1,15 +1,16 @@
 import { Button, Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tooltip, Typography } from "@mui/material";
 import { GetStatistics, ResetStatistics, StatPercentage } from "../utils/Statistics";
-import codeAnswers from "../data/codeAnswers";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function CodeStat({ code, correct, total }: { code: string, correct: number, total: number }) {
 
+    const { t } = useTranslation();
     return (
         <TableRow>
 
             <TableCell align="center">
-                <Tooltip title={codeAnswers.find(ca => ca.code === code)?.answer || 'idk'}>
+                <Tooltip title={t(code)}>
                     <Typography>{code}</Typography>
                 </Tooltip>
 
@@ -28,6 +29,7 @@ function CodeStat({ code, correct, total }: { code: string, correct: number, tot
 
 export default function Statistics() {
     const [statistics, setStatistics] = useState(() => GetStatistics());
+    const { t } = useTranslation();
 
     const reset = () => {
         ResetStatistics();
@@ -38,7 +40,7 @@ export default function Statistics() {
         <Grid padding={2}>
 
             <Typography align="center" variant="h2">
-                Statistics
+                {t('stats')}
             </Typography>
             <TableContainer sx={{
                 maxHeight: '70vh',
@@ -48,13 +50,13 @@ export default function Statistics() {
                     <TableHead>
                         <TableRow>
                             <TableCell align="center">
-                                Code
+                                {t('code')}
                             </TableCell>
                             <TableCell align="center">
-                                Percentage
+                                {t('percentage')}
                             </TableCell>
                             <TableCell align="center">
-                                Correct / Total
+                                {t('correct-total')}
                             </TableCell>
                         </TableRow>
                     </TableHead>
@@ -75,7 +77,7 @@ export default function Statistics() {
                 </Table>
             </TableContainer>
             <Grid container justifyContent='center' padding={2}>
-                <Button variant='contained' onClick={reset}>Reset statistics</Button>
+                <Button variant='contained' onClick={reset}>{t('reset-stats')}</Button>
             </Grid>
         </Grid>
     )

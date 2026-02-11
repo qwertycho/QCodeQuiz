@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 export default function Quiz() {
 
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
 
     const questions = useMemo(() => {

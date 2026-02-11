@@ -21,7 +21,13 @@ const enCodes = {
     'QSP?': 'will you relay to ...?',
     'QSQ?': 'shall I send a message for you?',
     'QSY?': 'shall I change to frequency ...?',
-    'QTH?': 'what is your location?'
-}
+    'QTH?': 'what is your location?',
+    'reset-stats': 'Reset Statistics',
+    'quiz': 'Quiz',
+    'stats': 'Statistics',
+    'code': 'Code',
+    'percentage': 'Percentage',
+    'correct-total': 'Correct / Total',
+};
 
 export default enCodes;
