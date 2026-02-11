@@ -32,7 +32,7 @@ export default function Question({
             setClicked(false);
         }
     }, [showAnswer])
-console.log(answer, showAnswer, clicked);   
+
     return (
         <Button
             fullWidth
