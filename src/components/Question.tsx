@@ -1,13 +1,13 @@
 import { Button } from "@mui/material";
-import type { QCodeAnswer } from "../data/QCode";
 import { useEffect, useState } from "react";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CloseIcon from '@mui/icons-material/Close';
 type props = {
-    answer: QCodeAnswer;
+    answer: string;
     disabled: boolean;
     onclick: () => void;
-    showAnswer: boolean
+    showAnswer: boolean,
+    correct: boolean
 }
 
 export default function Question({
@@ -15,6 +15,7 @@ export default function Question({
     disabled,
     onclick,
     showAnswer,
+    correct
 }: props) {
 
     const [clicked, setClicked] = useState(false);
@@ -37,12 +38,12 @@ export default function Question({
         <Button
             fullWidth
             variant="contained"
-            startIcon={showAnswer ? (!clicked ? null : answer.correct ? <CheckCircleIcon /> : <CloseIcon />) : null}
-            color={!showAnswer ? 'primary' : answer.correct ? 'success' : 'error'}
+            startIcon={showAnswer ? (!clicked ? null : correct ? <CheckCircleIcon /> : <CloseIcon />) : null}
+            color={!showAnswer ? 'primary' : correct ? 'success' : 'error'}
             onClick={click}
             aria-disabled={disabled}
         >
-            {answer.text}
+            {answer}
         </Button>
     );
 }

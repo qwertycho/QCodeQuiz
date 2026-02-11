@@ -1,14 +1,17 @@
 import { useMemo, useState } from 'react'
 import QuestionsBuilder from '../utils/QuestionBuilder'
-import codeAnswers from '../data/codeAnswers'
 import Question from '../components/Question';
 import { Button, Grid, Typography } from '@mui/material';
 import SetQuestionStatistic from '../utils/Statistics';
+import { useTranslation } from 'react-i18next';
 
 export default function Quiz() {
 
+    const { t } = useTranslation();
+
+
     const questions = useMemo(() => {
-        return QuestionsBuilder(codeAnswers);
+        return QuestionsBuilder();
     }, []);
 
     const [index, setIndex] = useState(0);
@@ -54,7 +57,8 @@ export default function Quiz() {
                             <Grid key={i} padding={1}>
                                 <Question
                                     key={i}
-                                    answer={a}
+                                    answer={t(a.text)}
+                                    correct={a.correct}
                                     disabled={!!submitResult}
                                     onclick={() => { submitAnswer(i) }}
                                     showAnswer={showAnswers}
