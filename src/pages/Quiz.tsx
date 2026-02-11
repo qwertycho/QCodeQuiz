@@ -40,7 +40,10 @@ export default function Quiz() {
             <Typography
                 align='center'
                 variant='h2'
-                paddingTop={10}>
+                paddingTop={10}
+                aria-label={t(questions[index].code)}
+                aria-description={t(questions[index].code)}
+            >
                 {questions[index].code}
             </Typography>
 
@@ -74,8 +77,10 @@ export default function Quiz() {
                         <Button
                             variant='contained'
                             color='secondary'
-                            onClick={nextQuestion}>
-                            next question
+                            onClick={nextQuestion}
+                            aria-label={t('next-question')}
+                        >
+                            {t('next-question')}
                         </Button>
                     </Grid>
 

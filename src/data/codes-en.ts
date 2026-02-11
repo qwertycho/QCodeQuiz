@@ -28,6 +28,7 @@ const enCodes = {
     'code': 'Code',
     'percentage': 'Percentage',
     'correct-total': 'Correct / Total',
+    'next-question': 'Next Question',
 };
 
 export default enCodes;

@@ -28,6 +28,7 @@ const nlCodes = {
     'code': 'Code',
     'percentage': 'Percentage',
     'correct-total': 'Correct / Totaal',
+    'next-question': 'Volgende Vraag',
 }
 
 export default nlCodes;

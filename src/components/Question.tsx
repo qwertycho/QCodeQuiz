@@ -42,6 +42,7 @@ export default function Question({
             color={!showAnswer ? 'primary' : correct ? 'success' : 'error'}
             onClick={click}
             aria-disabled={disabled}
+            aria-description={answer}
         >
             {answer}
         </Button>
