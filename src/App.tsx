@@ -11,6 +11,7 @@ function App() {
 
   const theme = useTheme();
 
+
   const [page, setPage] = useState<'quiz' | 'stats'>('quiz');
 
   return (
